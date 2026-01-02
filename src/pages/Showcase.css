@@ -1,0 +1,242 @@
+/* ================= SECTION ================= */
+.projects-section-wrapper {
+  position: relative;
+  background: transparent;
+  padding: 5rem 2rem;
+  overflow: hidden;
+}
+
+/* ================= TITLE ================= */
+.showcase-title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 3.5rem;
+  color: #ffffff;
+}
+
+.showcase-title span {
+  color: #00e0d3;
+}
+
+/* ================= CAROUSEL ================= */
+.project-carousel {
+  position: relative;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1600px;
+  padding: 0 6rem;
+  overflow: hidden;
+}
+
+/* ================= CARD BASE ================= */
+.project-card {
+  position: absolute;
+  width: 320px;
+  height: 380px;
+  perspective: 1400px;
+  transition:
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.5s ease;
+  will-change: transform;
+}
+
+/* ================= ACTIVE (CENTER) ================= */
+.project-card.active {
+  transform:
+    translateX(0)
+    translateZ(140px)
+    scale(1.18);
+  opacity: 1;
+  z-index: 5;
+}
+
+/* ================= LEFT & RIGHT ================= */
+.project-card.left {
+  transform: translateX(-420px);
+  opacity: 0.75;
+  z-index: 3;
+}
+
+.project-card.right {
+  transform: translateX(420px);
+  opacity: 0.75;
+  z-index: 3;
+}
+
+/* ================= FAR LEFT & FAR RIGHT ================= */
+.project-card.far-left {
+  transform: translateX(-740px) scale(0.9);
+  opacity: 0.35;
+  z-index: 1;
+}
+
+.project-card.far-right {
+  transform: translateX(740px) scale(0.9);
+  opacity: 0.35;
+  z-index: 1;
+}
+
+/* ================= CARD INNER ================= */
+.project-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.project-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+/* ================= FRONT & BACK ================= */
+.project-card-front,
+.project-card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  backface-visibility: hidden;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.55);
+  transition: background 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* ================= FRONT ================= */
+.project-card-front {
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ================= CENTER CARD CYAN BACKGROUND ================= */
+.project-card.active .project-card-front {
+  background: linear-gradient(
+    145deg,
+    #00e0d3,
+    #00bfb3
+  );
+}
+
+/* ================= TITLE OVERLAY ================= */
+.project-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ================= BACK ================= */
+.project-card-back {
+  background: #111827;
+  color: #fff;
+  padding: 2rem;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Cyan back when active */
+.project-card.active .project-card-back {
+  background: linear-gradient(
+    145deg,
+    #00e0d3,
+    #00bfb3
+  );
+  color: #0f172a;
+}
+
+.category {
+  color: #0f172a;
+  font-style: italic;
+  margin-bottom: 0.6rem;
+}
+
+.rating {
+  margin-top: 0.8rem;
+}
+
+/* ================= ACTIVE GLOW ================= */
+.project-card.active .project-card-front,
+.project-card.active .project-card-back {
+  box-shadow:
+    0 0 40px rgba(0, 224, 211, 0.6),
+    0 40px 70px rgba(0, 0, 0, 0.65);
+}
+
+/* ================= ARROWS ================= */
+.carousel-arrows {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.arrow-button {
+  pointer-events: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: cyan;
+  color: #0f0f0f;
+  box-shadow: 0 0 12px cyan, 0 0 25px rgba(0, 255, 255, 0.7);
+  border: 2px solid cyan;
+  padding: 0.9rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.arrow-button.left {
+  left: 1.5rem;
+}
+
+.arrow-button.right {
+  right: 1.5rem;
+}
+
+.arrow-button:hover {
+  background: #00c8b8;
+}
+
+/* ================= SCROLLBAR ================= */
+.dual-scroll {
+  max-height: 100vh;
+  overflow-y: auto;
+  direction: rtl;
+}
+
+.scroll-content {
+  direction: ltr;
+}
+
+.dual-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dual-scroll::-webkit-scrollbar-thumb {
+  background: #00e0d3;
+  border-radius: 10px;
+}
+
+.dual-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dual-scroll {
+  scrollbar-color: #00e0d3 transparent;
+  scrollbar-width: thin;
+}

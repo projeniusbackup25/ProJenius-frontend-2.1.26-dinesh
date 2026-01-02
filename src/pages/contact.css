@@ -1,0 +1,657 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f8f9fb;
+  color: #333;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Hero Section Styles (based on your TSX structure) */
+/* Main container */
+.contact-hero-container {
+  position: relative;
+  width: 100%;
+  height: 55vh;
+  background: #0f0f0f;  
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 2;
+}
+
+/* Background Video */
+.contact-hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 1;
+}
+
+/* Content Box */
+.contact-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+/* Title */
+.contact-hero-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+}
+
+/* Subtitle */
+.contact-hero-subtitle {
+  font-size: 1.3rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+  font-family: "Poppins", sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Tablet Responsive */
+@media (max-width: 768px) {
+  .contact-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .contact-hero-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .contact-hero-container {
+    height: 70vh;
+  }
+
+  .contact-hero-title {
+    font-size: 1.8rem;
+  }
+
+  .contact-hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* Main Contact Section */
+.contact-main {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  padding: 3rem;
+  background: white;
+  gap: 2rem;
+  justify-content: center; /* Center items when they wrap */
+}
+
+/* Left side: plain (Robot image and contact info) */
+.contact-left {
+  flex: 1 1 400px; /* Base flex item size */
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding-top: 80px;
+  text-align: center; /* Center text by default */
+}
+
+.contact-left h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-left: 0; /* Removed fixed padding for better centering control */
+  padding-top: 1px;
+  margin-bottom: 1rem;
+  display: flex; /* Keeps content (text) aligned */
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  text-align: center;
+}
+
+.emailg, .phone {
+  font-size: 1.2rem;
+  padding-left: 0; /* Removed fixed padding for better centering control */
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
+  margin: 0 auto; /* Center the block element */
+  width: fit-content; /* Ensure width wraps content for centering */
+}
+.phone{
+  padding-top: 7px;
+  margin-top: 4px;
+}
+
+.contact-left a:hover{
+  color: #3b82f6; /* Brighter on hover */
+  text-decoration: none;
+}
+
+/* Right side: card style (Contact Form) */
+.contact-right {
+  flex: 1 1 550px; /* Base flex item size */
+  background: #f0f4f8;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.contact-right p{
+  text-align: center;
+}
+.contact-right select option{
+  border: 10px;
+}
+
+/* Floating Robo Image */
+.contact-left img {
+  margin-top: 1rem;
+  width: 360px;
+  margin-left: auto; /* Center image */
+  margin-right: auto;
+  padding-left: 0; /* Removed fixed padding */
+  display: block; /* Ensures auto margins work */
+  animation: floatRobo 3s ease-in-out infinite;
+}
+
+@keyframes floatRobo {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row input {
+  flex: 1; /* Inputs share available space */
+}
+
+input,
+select,
+textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box; /* Include padding/border in width */
+}
+
+textarea {
+  min-height: 220px;
+  resize: vertical; /* Allow vertical resizing only */
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 0.8rem;
+  background-color: #3b82f6;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #1b5edb;
+}
+
+.response-time {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* FAQ Section */
+.faq-section {
+  background-color: #f8f9fb;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.faq-button {
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.5rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.faq-button:hover {
+  background-color: #1b5edb;
+}
+
+.faq-flex-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.faq-flex {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap for responsiveness */
+  gap: 1.7rem;
+  max-width: 1100px;
+  justify-content: center;
+  margin-top: 2rem; /* Space between button and FAQs */
+}
+
+.faq-item {
+  background: white;
+  width: 45%; /* Two per row */
+  min-width: 300px; /* Minimum width to prevent crushing on desktop */
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: background 0.3s, border 0.3s, box-shadow 0.3s; /* Smooth transitions */
+  text-align: left; /* Align question text to left */
+}
+
+/* Style for the active FAQ item */
+.faq-item.active {
+  border: 2px solid #3b82f6; /* Blue border to indicate active */
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.2); /* Stronger shadow */
+  background-color: #e0f2fe; /* Light blue background */
+}
+
+.faq-item:hover {
+  background-color: #f0f4ff;
+}
+
+.faq-item strong {
+  font-size: 1rem;
+  color: #222;
+  display: block;
+  margin-top: 5px;
+  padding-right: 20px; /* Space for a potential expand/collapse icon if added */
+}
+
+.faq-answer {
+  max-height: 0; /* Hidden by default */
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease; /* Smooth reveal */
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  color: #444;
+}
+
+.faq-answer.open {
+  max-height: 1000px; /* Sufficient height to show content */
+  opacity: 1;
+}
+
+/* Social Section */
+.social-section {
+ background-color:#0b0f14
+;
+  color:#e9eaeb;
+  text-align: center;
+  padding: 3rem;
+  padding-bottom: 70px;
+  padding-top: 70px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 1.5rem; /* Icon size */
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  position: relative; /* For tooltip positioning */
+  color: #cccbce; /* Default icon color */
+  text-decoration: none; /* No underline */
+  transition: color 0.3s, transform 0.3s;
+  display: flex; /* To align icon and text (even if text is hidden) */
+  flex-direction: column;
+  align-items: center;
+  font-size: inherit; /* Icons take parent font size */
+}
+
+.social-icons a:hover {
+  color: #19639f; /* Brighter on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.social-icons a span {
+  display: none; /* Hidden by default */
+  font-size: 12px;
+  color: #19639f;
+  position: absolute;
+  top: 30px; /* Position below icon */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap; /* Prevent text wrap */
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 3px 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.social-icons a:hover span {
+  display: block; /* Show on hover */
+}
+
+
+/* --- Responsive Adjustments --- */
+
+/* For larger tablets and smaller desktops (e.g., 769px to 1024px) */
+@media (max-width: 1024px) {
+  .hero-container {
+    padding: 3rem 1.5rem;
+  }
+
+  .hero-container .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-container .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .contact-main {
+    flex-direction: column; /* Stack contact-left and contact-right vertically */
+    padding: 2.5rem;
+    align-items: center; /* Center the stacked items */
+    gap: 3rem; /* Increase gap between stacked sections */
+  }
+
+  .contact-left,
+  .contact-right {
+    flex: 1 1 100%; /* Make them take full width available within max-width */
+    max-width: 600px; /* Limit max width for a better look on larger tablets */
+  }
+
+  .contact-left {
+    padding-top: 40px; /* Adjust padding for robot section */
+  }
+
+  /* Adjust alignment for contact info in contact-left */
+  .contact-left h2,
+  .emailg,
+  .phone {
+    align-items: center; /* Ensure they are centered */
+    text-align: center;
+    margin-left: auto; /* Re-center with auto margins */
+    margin-right: auto;
+  }
+
+  .contact-left img {
+    width: 280px; /* Smaller robot image */
+    margin-left: auto; /* Center image */
+    margin-right: auto;
+  }
+
+  .form-row {
+    flex-direction: column; /* Stack input fields vertically */
+    gap: 1.5rem; /* Adjust gap for stacked inputs */
+  }
+
+  .contact-right {
+    padding: 1.5rem; /* Slightly reduced padding */
+  }
+
+  /* FAQ specific adjustments */
+  .faq-flex {
+    gap: 1.5rem; /* Slightly reduce gap between FAQ items */
+  }
+
+  .faq-item {
+    width: 48%; /* Adjust width to make two per row still look good */
+    min-width: 280px; /* Allow a bit smaller minimum width */
+  }
+}
+
+/* For smaller tablets and large mobile phones (e.g., 481px to 768px) */
+@media (max-width: 768px) {
+  /* General padding and font size adjustments */
+  body {
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.7rem;
+  }
+  p {
+    font-size: 0.95rem;
+  }
+
+  .hero-container {
+    padding: 2.5rem 1rem;
+    min-height: 300px;
+  }
+
+  .hero-container .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-container .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .contact-main {
+    padding: 2rem 1rem;
+    gap: 2rem; /* Reduce gap slightly */
+  }
+
+  .contact-left {
+    padding-top: 30px;
+  }
+
+  .contact-left h2 {
+    font-size: 1.8rem;
+  }
+
+  .emailg, .phone {
+    font-size: 1.1rem;
+  }
+
+  .contact-left img {
+    width: 250px; /* Even smaller robot image */
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+
+  textarea {
+    min-height: 180px; /* Reduce textarea height */
+  }
+
+  .form-row {
+    gap: 1rem; /* Further reduce gap for stacked inputs */
+  }
+
+  /* FAQ Section responsiveness */
+  .faq-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .faq-flex {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center them */
+    gap: 1.2rem; /* Adjust gap for stacked items */
+  }
+
+  .faq-item {
+    width: 90%; /* Make items take more width */
+    min-width: unset; /* Remove min-width constraint to allow shrinking */
+    max-width: 500px; /* Max width for stacked items */
+    padding: 1rem; /* Adjust padding */
+  }
+
+  .faq-item strong {
+    font-size: 0.95rem; /* Adjust question font size */
+  }
+
+  .faq-answer {
+    font-size: 0.9rem; /* Adjust answer font size */
+  }
+
+  .social-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .social-icons {
+    gap: 1rem; /* Reduce gap between icons */
+    font-size: 1.3rem; /* Slightly smaller icons */
+  }
+}
+
+/* For small mobile phones (e.g., up to 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+
+  .hero-container {
+    padding: 2rem 0.8rem;
+    min-height: 250px;
+  }
+
+  .hero-container .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-container .hero-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .contact-main {
+    padding: 1.5rem 0.8rem;
+    gap: 1.5rem;
+  }
+
+  .contact-left {
+    padding-top: 20px;
+  }
+
+  .contact-left h2 {
+    font-size: 1.6rem;
+  }
+
+  .emailg, .phone {
+    font-size: 1rem;
+  }
+
+  .contact-left img {
+    width: 200px; /* Smallest robot image */
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  textarea {
+    min-height: 150px; /* Further reduce textarea height */
+  }
+
+  .faq-section {
+    padding: 2rem 0.8rem;
+  }
+
+  .faq-item {
+    width: 95%; /* Make items almost full width */
+    padding: 0.8rem;
+  }
+
+  .faq-item strong {
+    font-size: 0.9rem;
+  }
+
+  .faq-answer {
+    font-size: 0.85rem;
+  }
+
+  .social-section {
+    padding: 2rem 0.8rem;
+  }
+
+  .social-icons {
+    gap: 0.8rem; /* Even less gap between icons */
+    font-size: 1.2rem; /* Smallest icons */
+  }
+  .social-icons a span {
+    font-size: 10px; /* Smaller text for hover tooltip */
+    top: 25px; /* Adjust tooltip position */
+  }
+}

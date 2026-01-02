@@ -1,0 +1,93 @@
+/* ===== HERO SECTION ===== */
+.work-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* ✅ safer than height */
+  overflow: hidden;
+}
+
+/* ===== BACKGROUND VIDEO ===== */
+.work-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* ===== OVERLAY ===== */
+.work-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: -1;
+}
+
+/* ===== CENTER CONTENT ===== */
+.work-center {
+  position: relative;
+  min-height: 100vh; /* ✅ keeps true height */
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: #ffffff;
+  padding: 0 20px;
+  z-index: 5;
+
+  /* ❌ REMOVED translateY */
+}
+
+/* ===== TITLE ===== */
+.work-title {
+  font-size: 3.6rem;
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 12px;
+}
+
+.work-title span {
+  color: #00e0d3;
+}
+
+/* ===== DESCRIPTION ===== */
+.work-description {
+  max-width: 780px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #cfd8dc;
+  margin-bottom: 36px;
+}
+
+/* ===== BUTTONS ===== */
+.work-buttons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+/* BUTTONS */
+.btn-primary {
+  padding: 14px 34px;
+  background: #00e0d3;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  color: #000;
+  cursor: pointer;
+}
+
+.btn-outline {
+  padding: 14px 34px;
+  border-radius: 999px;
+  border: 2px solid #00e0d3;
+  font-weight: 600;
+  color: #00e0d3;
+  background: transparent;
+  cursor: pointer;
+}

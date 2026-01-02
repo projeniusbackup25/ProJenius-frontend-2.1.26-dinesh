@@ -1,0 +1,659 @@
+.courses-hero {
+  position: relative;
+  width: 100%;
+  height: 55vh;
+  background: #0f0f0f;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background Video */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 1 /* look similar to your spline particles */
+}
+
+/* Dark overlay to blend video */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 2;
+}
+
+/* Text container */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.3;
+  font-family: 'Poppins', sans-serif;
+}
+
+.highlight {
+  color: #00fff2; /* exact cyan from your screenshot */
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .courses-hero {
+    height: 70vh;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Courses Section */
+.courses-section {
+  width: 100%;
+  padding: 80px 20px;
+  background: #f5f7fa;
+}
+
+.courses-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.badge {
+  background: #cffafe;
+  color: #0e7490;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.courses-header h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin: 15px 0;
+  color: #111;
+}
+
+.courses-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.courses-grid {
+  max-width: 1150px;
+  margin: 40px auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 35px; /* tighter & cleaner */
+}
+
+.course-card-new {
+  display: flex;
+  align-items: center;     /* fixed vertical alignment */
+  gap: 18px;
+  padding: 22px 26px;
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+}
+
+.course-card-new:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.10);
+}
+
+/* FIX: Smaller, balanced, premium icons */
+.course-icon-new {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: rgb(0, 208, 255);
+}
+
+.course-card-new h3 {
+  font-size: 1.28rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+
+.course-card-new p {
+  color: #606060;
+  margin: 0;
+  line-height: 1.45;
+  max-width: 450px; /* prevents stretching */
+}
+
+
+
+/* Responsive fix */
+@media (max-width: 900px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.course-icon-new {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: white;
+  background: #0ea5e9; /* Blue tone */
+  transition: transform 0.4s ease;
+}
+
+
+
+@keyframes spiral-rotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.spiral-hover:hover {
+  animation: spiral-rotate 0.7s ease forwards;
+}
+
+.course-card-new:hover .course-icon-new {
+  animation: spiral-rotate 0.7s ease forwards;
+}
+
+
+
+/* ---------------- SECTION 2 ---------------- */
+.interactive-section {
+  width: 100%;
+  padding: 100px 10%; /* wider space left & right */
+  margin-bottom: -20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  gap: 80px; /* increased gap to match screenshot */
+}
+
+/* Left Side */
+.interactive-left {
+  width: 55%; /* wider text section */
+  color: white;
+}
+
+/* Right Side */
+.interactive-right {
+    display: flex;
+    justify-content: center;   /* centers horizontally */
+    align-items: center;       /* centers vertically */
+}
+
+
+/* Robot image fix */
+.robot-img {
+  width: 600px;       /* slightly bigger like screenshot */
+  height: auto;
+  border-radius: 20px;
+  transform: scaleX(-1);
+}
+
+
+.interactive-right img {
+    height: auto !important; /* or whatever height you need */
+    width: 550px;      /* FIXED width so it stays aligned */
+    object-fit: cover; /* keeps proportions & cropping clean */
+    border-radius: 20px;
+}
+
+
+/* Position Active Learners card exactly like image */
+.active-learners-card {
+  position: absolute;
+  bottom: 10px;
+  left: -20px;  /* moved left like screenshot */
+  background: rgba(15, 15, 15, 0.85);
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 15px;
+  backdrop-filter: blur(7px);
+  border: 1px solid #222;
+}
+
+
+.badge-live {
+  display: inline-block;
+  background: #0f2f35;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  color: #00fff2;
+  margin-bottom: 18px;
+}
+
+.interactive-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 25px;
+}
+
+.highlight2 {
+  color: #00fff2;
+}
+
+.interactive-subtext {
+  color: #bbbbbb;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 550px;
+  margin-bottom: 35px;
+}
+
+/* Features */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px 30px;
+  margin-bottom: 45px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feature-item img {
+  width: 38px;
+}
+
+.feature-item p {
+  font-size: 1.05rem;
+  color: white;
+}
+
+.join-btn,
+.joined-btn {
+  background: #00fff2;
+  color: #000;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  margin-right: 20px; /* <-- space between buttons */
+}
+
+/* Remove huge margin */
+.joined-btn {
+  margin-right: 0; /* final button should not push layout */
+}
+
+.join-btn:hover,
+.joined-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px #00fff2;
+}
+
+/* Right Side */
+.interactive-right {
+  width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.robot-wrap {
+  position: relative;
+  display: inline-block; /* keep size to the image */
+  z-index: 1;
+}
+
+/* the blue illumination behind the robot */
+.robot-wrap::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 80%;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 240, 255, 0.28) 0%,
+    rgba(0, 240, 255, 0.15) 45%,
+    rgba(0, 240, 255, 0.06) 85%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  border-radius: 40%; /* soft oval glow */
+  z-index: -1; /* behind the image */
+  pointer-events: none;
+}
+
+.robot-img {
+  width: 520px;
+  height: 520px;
+  border-radius: 20px;
+  transform: scaleX(-1);
+}
+.interactive-right {
+  transform: scaleX(1);
+}
+.interactive-right * {
+  transform: scaleX(1);
+}
+
+
+/* Active Learner Badge */
+.active-learners-card {
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  background: rgba(15, 15, 15, 0.85);
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 15px;
+  backdrop-filter: blur(7px);
+  border: 1px solid #222;
+}
+
+.active-learners-card img {
+  width: 35px;
+}
+
+.active-learners-card .label {
+  color: #bbbbbb;
+  font-size: 0.82rem;
+}
+
+.active-learners-card h3 {
+  color: #ffffff;
+  font-size: 1.6rem;
+  margin-top: 1px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .interactive-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .interactive-left,
+  .interactive-right {
+    width: 100%;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .robot-img {
+    width: 75%;
+    margin-top: 30px;
+  }
+}
+
+.why-section {
+  width: 100%;
+  padding: 100px 20px;
+  background: #f5f7fa; /* light grey just like the UI */
+  text-align: center;
+}
+
+/* Badge */
+.why-badge {
+  display: inline-block;
+  background: #cffafe;
+  color: #0ea5e9;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  margin-top: -30px;
+}
+
+/* Heading */
+
+.why-header {
+  margin-top: -50px;
+}
+
+.why-header h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.why-header p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Features Grid */
+.why-features {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Card */
+.why-card {
+  text-align: center;
+  padding: 10px;
+}
+
+/* Icon container */
+.why-icon {
+  width: 85px;
+  height: 85px;
+  background: white;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 10px 30px rgba(0, 200, 255, 0.15);
+}
+
+.why-icon svg {
+  font-size: 40px;
+  color: #00d5ff; /* cyan glow color */
+}
+
+/* Text */
+.why-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.why-card p {
+  font-size: 0.98rem;
+  color: #666;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .why-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  .why-header h2 {
+    font-size: 2rem;
+  }
+
+  .why-features {
+    grid-template-columns: 1fr;
+  }
+
+  .why-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .why-icon svg {
+    font-size: 32px;
+  }
+}
+
+/* ==========================
+   ENROLL CTA SECTION
+========================== */
+
+.enroll-section {
+  width: 100%;
+  padding: 120px 20px;
+  background: radial-gradient(
+      circle at center,
+      rgba(0, 255, 242, 0.08) 0%,
+      rgba(0, 255, 242, 0.03) 45%,
+      rgba(0, 255, 242, 0.01) 65%,
+      transparent 90%
+    ),
+    #020202;
+  text-align: center;
+}
+
+.enroll-content {
+  margin-top: -60px;
+  margin-bottom: -60px;
+}
+
+.enroll-content h2 {
+  color: white;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.cyan-text {
+  color: #00fff2;
+}
+
+.enroll-subtext {
+  color: #cccccc;
+  font-size: 1.1rem;
+  margin-bottom: 45px;
+}
+
+.enrol-btn {
+  padding: 16px 42px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  width: 20%;
+  border-radius: 40px;
+  cursor: pointer;
+  /* background: linear-gradient(90deg, #00e8ff, #00ffd8); */
+  color: #000;
+  transition: 0.25s ease-in-out;
+  box-shadow: 0 0 20px rgba(0, 255, 242, 0.25);
+}
+
+.enrol-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 35px rgba(0, 255, 242, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .enrol-content h2 {
+    font-size: 2.3rem;
+  }
+
+  .enrol-btn {
+    padding: 14px 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .enroll-content h2 {
+    font-size: 1.9rem;
+  }
+}
+
+/* Slide-in Animation */
+.slide-in {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideInUp 2.2s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Initial hidden state */
+.slide-in-target {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease-out;
+}
+
+/* Active once in view */
+.slide-in-active {
+  opacity: 1;
+  transform: translateY(0);
+}

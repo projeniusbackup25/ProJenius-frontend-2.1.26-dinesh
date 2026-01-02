@@ -1,0 +1,787 @@
+/* Base Styles */
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* Changed to hidden to prevent horizontal scrollbars */
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif; /* Added Inter font */
+}
+
+#root,
+.App {
+  overflow-x: hidden; /* Changed to hidden */
+}
+
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 80px;
+  background-color: #0f172a;
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  max-width: 50%;
+  overflow-x: hidden;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  color: #cbd5e1;
+  margin-bottom: 30px;
+}
+
+.hero-section * {
+  text-align: left !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+}
+
+
+.hero-buttons {
+  display: flex;
+  justify-content: flex-start;   /* ✅ Moves button LEFT */
+  align-items: flex-start;
+  gap: 1rem;
+
+  margin-top: 20px;
+  padding: 0;
+
+  width: 100%;                   /* IMPORTANT: keeps alignment to column */
+}
+
+
+.btn-primary {
+  margin-right: 30px;   /* 🔥 KILLS margin-left: 100% */
+}
+
+
+
+.btn-primary {
+  background: none;
+  color: white;
+  border: 2px solid white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+  margin: 0; /* ✅ VERY IMPORTANT */
+}
+
+
+.btn-primary:hover {
+  background-color: white;
+  color: #1e293b;
+  border-color: white;
+}
+
+
+
+.hero-image img {
+  width: 400px;
+  max-width: 100%;
+  border-radius: 12px;
+  background-color: #e3f2fd;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 5%;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  background: none;
+  /* Default desktop styles */
+  flex-direction: row;
+}
+
+.hero-left {
+  flex: 1;
+  color: #fff;
+  margin-bottom: 85px;
+  margin-top: 90px;
+  /* Default desktop styles */
+  text-align: left;
+}
+
+.hero-left h1 {
+  font-size: 3rem; /* Default desktop font size */
+  margin-bottom: 1rem;
+}
+
+.hero-left p {
+  font-size: 1.2rem; /* Default desktop font size */
+  margin-bottom: 1.5rem;
+  margin-top: 35px;
+}
+
+/* DEFAULT DESKTOP STYLES FOR HERO-RIGHT - MOVED FROM INLINE STYLE IN TSX */
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.robot-video {
+  width: 790px;
+  height: 790px;
+  margin-top: -50px;
+  margin-bottom: -50px;
+  margin-left: 30px;
+  margin-right: -60px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .robot-video {
+    width: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .robot-video {
+    width: 250px;
+    margin-top: 30px;
+  }
+}
+
+
+/* How Projenius Works Section */
+.how-it-works {
+  background-color: transparent !important;
+  padding: 60px 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.how-it-works-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.section-title1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-top: 135px;
+  margin-bottom: 20px;
+  width: 40%;
+}
+
+.running-robot {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  margin-top: 220px;
+  margin-left: 70px;
+  animation: runAround 10s linear infinite;
+}
+
+@keyframes runAround {
+  0% {
+    left: 0;
+    transform: scaleX(1);
+  }
+  49% {
+    left: 30vw;
+    transform: scaleX(1);
+  }
+  50% {
+    left: 30vw;
+    transform: scaleX(-1);
+  } /* flip */
+  99% {
+    left: 0;
+    transform: scaleX(-1);
+  }
+  100% {
+    left: 0;
+    transform: scaleX(1);
+  } /* reset face direction */
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  width: 55%;
+}
+
+.step-card {
+  background-color: #1f1f21;
+  padding: 20px 16px;
+  height: 310px;
+  width: 360px;
+  border-radius: 26px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.step-card.animate {
+  animation: flyUp 1.4s ease forwards;
+}
+
+.step-card.animate:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px #00fff2;
+}
+
+.step-card .icon {
+  background-color: #818383;
+  font-size: 30px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.icon {
+  background-color: #818383;
+  color: #e1e1e1;
+  font-size: 30px;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.step-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.step-card p {
+  font-size: 14px;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+@keyframes flyUp {
+  0% {
+    transform: translateY(150px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-10px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+.delay-2 {
+  animation-delay: 0.4s;
+}
+.delay-3 {
+  animation-delay: 0.6s;
+}
+.delay-4 {
+  animation-delay: 0.8s;
+}
+.delay-5 {
+  animation-delay: 1s;
+}
+.delay-6 {
+  animation-delay: 1.2s;
+}
+
+/* Top Categories Section */
+.top-categories {
+  background-color: transparent;
+  position: relative;
+  padding: 60px 20px; /* Base padding for the section */
+  z-index: 2;
+  text-align: center; /* Center the title */
+}
+
+.top-categories::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
+  z-index: -1;
+}
+
+/* Specific styling for the H2 within top-categories */
+.top-categories h2 {
+  font-size: 2.8rem; /* Adjusted to be more prominent */
+  font-weight: 800;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 60px; /* More space below the title */
+}
+
+/* This .categories-flex rule is not used in your TSX, but kept for completeness */
+.categories-flex {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 40px;
+  gap: 40px;
+  text-align: center;
+}
+
+.category-card:first-child {
+  justify-self: start;
+}
+
+.category-card:last-child {
+  justify-self: end;
+}
+
+/* Updated .services-grid to match the desired layout */
+.top-categories .services-grid { /* SCOPED */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+  justify-items: center; /* Center items within their grid cells */
+  gap: 85px; /* Adjusted gap for a tighter, more modern look */
+  margin-top: 0; /* Reset margin-top as it's handled by h2 margin-bottom */
+  max-width: 1200px; /* Max width for the grid container */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px; /* Add some horizontal padding to the grid itself */
+}
+
+/* Updated .service-card styles to match the new design */
+.top-categories .service-card { /* SCOPED */
+  background-color: #1A1A1A; /* Dark background */
+  padding: 30px; /* Adjusted padding */
+  width: 380px; /* Make width flexible within its grid cell */
+  height: 350px; /* Adjusted height for a more compact look */
+  margin-left: -36px;
+  border-radius: 20px; /* More rounded corners */
+  z-index: 1;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Darker, more pronounced shadow */
+  text-align: center;
+  display: flex; /* Use flexbox for internal alignment */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border */
+}
+
+.top-categories .service-card:hover { /* SCOPED */
+  transform: translateY(-8px); /* Slightly more pronounced lift on hover */
+  
+  box-shadow: 0 12px 30px rgba(0, 255, 242, 0.4); /* Cyan glow on hover */
+}
+
+/* Updated .icon1 styles to match the new design */
+.top-categories .service-card .icon1 { /* SCOPED */
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -2px;
+  margin-bottom: 62px;
+  width: 60px;
+  height: 60px;
+  background-color: #818383;
+  color: #e1e1e1;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 45px;
+}
+
+/* Ensure the h3 and p tags inside service-card have the correct colors */
+.top-categories .service-card h3 { /* SCOPED */
+  font-size: 1.3rem; /* Slightly larger font for titles */
+  font-weight: 700;
+  color: #ffffff; /* White color */
+  margin-bottom: 10px; /* Space below title */
+}
+
+.top-categories .service-card p { /* SCOPED */
+  font-size: 0.95rem; /* Adjusted font size for description */
+  color: #B0B0B0; /* Light grey color for description */
+  line-height: 1.6;
+  margin-bottom: 0; /* Remove default bottom margin */
+}
+
+/* The original .category-card and its children were not used in TSX, but I'll keep them
+   and ensure they don't conflict, though they are effectively unused now. */
+.category-card {
+  /* This block is largely superseded by .service-card for the active elements */
+  background-color: #1f1f21;
+  padding: 20px;
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+  border-radius: 12px;
+  z-index: 1;
+  box-shadow: 0 4px 20px #000000;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px #00fff2;
+}
+
+.category-card .icon {
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 52px;
+  margin-bottom: 22px;
+  width: 60px;
+  height: 60px;
+  background-color: #818383;
+  color: #e1e1e1;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.category-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.category-card p {
+  font-size: 14px;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.icon-modern {
+  color: #00fff2;
+}
+
+.animated-card {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animated-card.slide-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.step-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.step-card.visible {
+  animation: fadeInUp 0.6s forwards;
+}
+
+.delay-1.visible {
+  animation-delay: 0.2s;
+}
+.delay-2.visible {
+  animation-delay: 0.4s;
+}
+.delay-3.visible {
+  animation-delay: 0.6s;
+}
+.delay-4.visible {
+  animation-delay: 0.8s;
+}
+
+/* Background Spline styling */
+.spline-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-section {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-left h1,
+.hero-left p,
+.hero-buttons {
+  color: #ffffff;
+}
+
+/* --- Responsive Styles --- */
+
+/* For screens smaller than 1024px (e.g., tablets in landscape, smaller laptops) */
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 2rem 3%; /* Adjust padding */
+    min-height: auto; /* Allow height to adjust */
+  }
+
+  .hero-left {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px; /* Adjust margin */
+  }
+
+  .hero-left h1 {
+    font-size: 2.5rem; /* Smaller font size */
+  }
+
+  .hero-left p {
+    font-size: 1rem; /* Smaller font size */
+  }
+
+  .hero-buttons {
+    justify-content: center; /* Center buttons */
+    margin-right: 0; /* Remove fixed margin */
+  }
+
+  .hero-right {
+    width: 100%;
+    margin-left: 0; /* Remove fixed margin */
+    height: 450px; /* Adjust height for smaller screens */
+  }
+
+  .how-it-works {
+    padding: 40px 20px; /* Adjust padding */
+  }
+
+  .how-it-works-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Adjust gap */
+  }
+
+  .section-title1 {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px; /* Adjust margin */
+    font-size: 2.2rem; /* Smaller font size */
+  }
+
+  .running-robot {
+    width: 120px;
+    height: 120px;
+    margin-top: 0; /* Reset margin */
+    margin-left: 0; /* Reset margin */
+    position: relative; /* Make it relative for centering */
+    animation: none; /* Disable complex animation on smaller screens if problematic */
+    display: block;
+    margin: 20px auto; /* Center it */
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(1, 1fr); /* Single column on smaller screens */
+    width: 100%;
+    gap: 30px; /* Adjust gap */
+  }
+
+  .step-card {
+    width: 100%; /* Full width */
+    height: auto; /* Auto height */
+    padding: 25px; /* Adjust padding */
+  }
+
+  .top-categories {
+    padding: 40px 20px; /* Adjust padding */
+  }
+
+  .top-categories h2 { /* SCOPED */
+    font-size: 2rem; /* Smaller font size */
+  }
+
+  .top-categories .services-grid { /* SCOPED */
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 30px; /* Adjusted gap */
+    margin-top: 30px;
+  }
+
+  .top-categories .service-card { /* SCOPED */
+    width: 100%; /* Adjust width for 2 columns */
+    max-width: 300px; /* Max width for cards in a grid */
+    height: auto; /* Auto height */
+    margin-left: 60px; /* Ensure no fixed margin */
+    padding: 25px; /* Adjust padding */
+  }
+}
+
+/* For screens smaller than 768px (e.g., tablets in portrait, larger phones) */
+@media (max-width: 768px) {
+  /* HIDE THE ROBOT HERE */
+  .hero-right {
+    display: none;
+  }
+
+  /* Adjust hero section layout when robot is hidden */
+  .hero-section {
+    justify-content: center; /* Center content horizontally */
+    text-align: center; /* Center text within hero-left */
+  }
+
+  .hero-left {
+    margin-bottom: 0; /* Remove extra bottom margin from hero-left if it creates too much space */
+  }
+
+  .hero-left h1 {
+    font-size: 2rem;
+  }
+
+  .hero-left p {
+    font-size: 0.9rem;
+  }
+
+  .section-title1 {
+    font-size: 1.8rem;
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(1, 1fr); /* Ensure single column */
+  }
+
+  .step-card {
+    padding: 20px;
+  }
+
+  .top-categories h2 { /* SCOPED */
+    font-size: 1.8rem;
+  }
+
+  .top-categories .services-grid { /* SCOPED */
+    grid-template-columns: repeat(1, 1fr); /* Single column on small screens */
+    gap: 20px; /* Smaller gap */
+  }
+
+  .top-categories .service-card { /* SCOPED */
+    width: 100%; /* Full width */
+    max-width: 280px; /* Max width for single column */
+    padding: 20px;
+  }
+}
+
+/* For screens smaller than 480px (e.g., most mobile phones) */
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 1.5rem 1%;
+  }
+
+  .hero-left h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero-left p {
+    font-size: 0.8rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center stacked buttons */
+  }
+
+  .btn-primary {
+    width: 80%; /* Make button narrower for very small screens */
+  }
+
+  .section-title1 {
+    font-size: 1.5rem;
+  }
+
+  .running-robot {
+    width: 100px;
+    height: 100px;
+  }
+
+  .step-card {
+    padding: 15px;
+  }
+
+  .step-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .step-card p {
+    font-size: 0.8rem;
+  }
+
+  .top-categories h2 { /* SCOPED */
+    font-size: 1.5rem;
+  }
+
+  .top-categories .service-card { /* SCOPED */
+    max-width: 250px; /* Adjust max-width */
+    padding: 15px;
+    margin-left: 35px;
+  }
+
+  .top-categories .service-card h3 { /* SCOPED */
+    font-size: 1.1rem;
+  }
+}
+
+.particle-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}

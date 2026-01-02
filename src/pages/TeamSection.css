@@ -1,0 +1,126 @@
+.team-section {
+  background-color: #f9fbff;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+/* TITLE */
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 3rem;
+}
+
+.brand-pro {
+  color: #00fff2;
+}
+
+.brand-jenius {
+  color: #100202;
+}
+
+/* ================= SCROLLING ================= */
+.scrolling-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.team-scroll-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scroll 75s linear infinite;
+}
+
+.scrolling-wrapper:hover .team-scroll-track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ================= TEAM CARD ================= */
+.team-card {
+  min-width: 300px;
+  height: 320px;
+  padding: 2.5rem 1.5rem;
+  border-radius: 24px;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box;
+    /* linear-gradient(135deg, #00fff2, #00fff2) border-box; */
+
+  border: 2px solid transparent;
+  /* box-shadow: 0 0 25px rgba(0, 255, 242, 0.35); */
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 0 45px rgba(0, 255, 242, 0.7);
+}
+
+/* ================= AVATAR ================= */
+.team-avatar {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 1.2rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================= TEXT ================= */
+.team-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0.5rem 0;
+}
+
+.team-role {
+  font-size: 1rem;
+  color: #00aaa2;
+  margin-bottom: 0.5rem;
+}
+
+.team-quote {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #333;
+  margin-bottom: 1.2rem;
+}
+
+/* ================= ICONS ================= */
+.team-icons span {
+  font-size: 1.25rem;
+  margin: 0 0.35rem;
+  color: #444;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.team-icons span:hover {
+  transform: translateY(-4px) scale(1.2);
+  color: #00fff2;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .team-card {
+    min-width: 45vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .team-card {
+    min-width: 80vw;
+  }
+}

@@ -1,0 +1,343 @@
+/* ================= GLOBAL RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ================= HERO SECTION ================= */
+.services-hero-container {
+  position: relative;
+  width: 100%;
+  height: 55vh;
+  background: #0f0f0f;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 2;
+}
+
+.services-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.services-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+.services-hero-title {
+  font-size: 3.4rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.3;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================= SERVICES SECTION ================= */
+.services-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.services-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2rem;
+  max-width: 2200px;
+  margin: 0 auto;
+}
+
+/* ================= SERVICE CARD ================= */
+.service-card {
+  background: #ffffff;
+  padding: 2rem;
+  padding-top: 90px;
+  margin-top: 40px;
+  width: 400px;
+  height: 330px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 0 45px rgba(0, 255, 242, 0.7);
+}
+
+/* 🔥 SERVICE ICON (TOP ICON) */
+.service-card .icon1 {
+  font-size: 2.8rem;      /* ✅ minimized */
+  color: #1f246c;
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+/* Service text */
+.service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* ================= WHY CHOOSE SECTION ================= */
+.why-choose-section {
+  padding: 4rem 2rem 90px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.why-choose-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefit-card {
+  background: #fff;
+  text-align: left;
+}
+
+.icon-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* 🔥 WHY-CHOOSE ICON */
+.icon-text .icon1 {
+  font-size: 2.2rem;
+  color: #1f246c;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.icon-text h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.icon-text p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ================= HOW IT WORKS ================= */
+/* How It Works */
+
+
+
+
+.how-it-works {
+  padding: 4rem 2rem;
+  background: #ffffff;
+  text-align: center;
+  padding-bottom: 90px;
+}
+
+.how-it-works h2 {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.step {
+  max-width: 260px;
+  text-align: center;
+}
+
+.step i {
+  font-size: 2rem;
+  color: #1f246c;
+  background: #e0f2fe;
+  border-radius: 50%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.step h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.step p {
+  color: #555;
+}
+
+/* 🔥 REACT ICON FIX */
+.step svg {
+  font-size: 2rem;
+  color: #1f246c;
+  background: #e0f2fe;
+  border-radius: 50%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.step:hover svg {
+  background-color: #7da1e9;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.step h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.step p {
+  color: #bbb;
+}
+
+/* ================= CTA ================= */
+.cta {
+  background: #0f172a;
+  color: white;
+  padding: 4rem 2rem 90px;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta button:hover {
+  background-color: #7da1e9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* ================= FADE IN ================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.fade-in {
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .services-hero-title {
+    font-size: 2.4rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .service-card .icon1 {
+    font-size: 2.4rem;
+  }
+  /* How It Works Section */
+  .steps {
+    flex-direction: column; /* Stack steps vertically */
+    align-items: center; /* Center steps */
+    gap: 1.5rem;
+  }
+
+  .step {
+    max-width: 90%; /* Allow step to take more width */
+  }
+}
+
+@media (max-width: 576px) {
+  .services-hero-title {
+    font-size: 1.9rem;
+  }
+
+  .service-card .icon1 {
+    font-size: 2.2rem;
+  }
+
+  .icon-text .icon1 {
+    font-size: 2rem;
+  }
+}
+
+/* Animate icons on hover in How It Works */
+.step i {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.step:hover i {
+  background-color: #7da1e9;
+  transform: scale(1.1) rotate(5deg);
+}
+
+

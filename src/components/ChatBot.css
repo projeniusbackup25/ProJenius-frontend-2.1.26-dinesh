@@ -1,0 +1,30 @@
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 400px;
+  max-height: 80vh;
+  background: none;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+
+
+.chatbot-close-btn {
+  background:none;
+  border: none;
+  color: white ;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 340px;
+}
+
+.chat-iframe-wrapper {
+  flex: 1;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 50px;
+}
