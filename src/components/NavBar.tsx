@@ -23,14 +23,10 @@ const Navbar: React.FC = () => {
   }, [location.pathname]);
 
   return (
-    <nav
-      className={`navbar ${scrolled ? "scrolled" : ""} ${
-        !isHomePage ? "solid" : ""
-      }`}
-    >
+    <nav className={`navbar ${scrolled ? "scrolled" : ""} ${!isHomePage ? "solid" : ""}`}>
       <div className="navbar-container">
 
-        {/* LOGO (REAL LINK) */}
+        {/* LOGO */}
         <a href="/" className="navbar-logo">
           <img src={logo} alt="ProJenius Logo" />
           <span className="brand-text">
@@ -39,7 +35,7 @@ const Navbar: React.FC = () => {
           </span>
         </a>
 
-        {/* MAIN NAV */}
+        {/* NAV LINKS */}
         <ul className={`navbar-links ${menuOpen ? "active" : ""}`}>
 
           <li>
@@ -50,25 +46,29 @@ const Navbar: React.FC = () => {
             <Link to="/about">About Us</Link>
           </li>
 
-          {/* SERVICES (SEO PARENT) */}
+          {/* SERVICES DROPDOWN */}
           <li
             className="services-dropdown"
             onMouseEnter={() => !menuOpen && setServicesOpen(true)}
             onMouseLeave={() => !menuOpen && setServicesOpen(false)}
           >
-            <Link to="/services" className="services-link">
-              Services
-            </Link>
+            <div
+              className="services-row"
+              onClick={() => setServicesOpen(!servicesOpen)}
+            >
+              <li ><Link to="/services">Services</Link></li>
+              <span className={`services-arrow ${servicesOpen ? "rotate" : ""}`}>▾</span>
+            </div>
 
             <ul className={`dropdown-menu ${servicesOpen ? "show" : ""}`}>
               <li>
-                <Link to="/courses">Courses</Link>
+                <Link to="/services/courses">Courses</Link>
               </li>
               <li>
-                <Link to="/workshops">Workshops</Link>
+                <Link to="/services/workshops">Workshops</Link>
               </li>
               <li>
-                <Link to="/products">Products</Link>
+                <Link to="/services/products">Products</Link>
               </li>
             </ul>
           </li>
@@ -80,7 +80,6 @@ const Navbar: React.FC = () => {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
-
         </ul>
 
         {/* HAMBURGER */}

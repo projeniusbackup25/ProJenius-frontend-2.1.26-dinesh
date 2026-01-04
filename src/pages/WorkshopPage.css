@@ -2,8 +2,9 @@
 .work-section {
   position: relative;
   width: 100%;
-  min-height: 100vh; /* ✅ safer than height */
+  min-height: calc(100vh - 120px);
   overflow: hidden;
+  background: transparent;
 }
 
 /* ===== BACKGROUND VIDEO ===== */
@@ -27,7 +28,7 @@
 /* ===== CENTER CONTENT ===== */
 .work-center {
   position: relative;
-  min-height: 100vh; /* ✅ keeps true height */
+  min-height: calc(100vh - 120px); /* ✅ FIX */
   width: 100%;
 
   display: flex;
@@ -39,8 +40,6 @@
   color: #ffffff;
   padding: 0 20px;
   z-index: 5;
-
-  /* ❌ REMOVED translateY */
 }
 
 /* ===== TITLE ===== */

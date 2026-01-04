@@ -134,3 +134,42 @@
   .magazine-visual { margin-bottom: 50px; }
   .hero-subtext-medium { margin-left: auto; margin-right: auto; }
 }
+@media (max-width: 768px) {
+
+  .magazine-container {
+    padding: 60px 5%;
+  }
+
+  .magazine-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+
+  /* FIX: Scale magazine perfectly inside mobile */
+  .book-shadow-wrapper {
+    width: 90vw !important;   /* shrink to screen width */
+    max-width: 450px !important; /* prevents it from growing too large */
+    margin: 0 auto 30px auto;
+  }
+
+  /* Reduce PDF page height to fit mobile */
+  .react-pdf__Page__canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .hero-text-medium {
+    font-size: 34px;
+  }
+
+  .hero-subtext-medium {
+    font-size: 16px;
+    max-width: 90%;
+    margin: 0 auto 25px;
+  }
+
+  .magazine-controls-pill {
+    transform: scale(0.9);
+  }
+}

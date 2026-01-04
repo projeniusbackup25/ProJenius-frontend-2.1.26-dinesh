@@ -1,3 +1,7 @@
+/* =============================================
+   GALLERY SECTION
+   ============================================= */
+
 .gallery-section {
   padding: 80px 20px;
   background: transparent;
@@ -14,7 +18,10 @@
   color: #00e0d3;
 }
 
-/* Masonry */
+/* =============================================
+   MASONRY GRID
+   ============================================= */
+
 .gallery-grid {
   max-width: 1400px;
   margin: auto;
@@ -22,7 +29,10 @@
   column-gap: 18px;
 }
 
-/* Item */
+/* =============================================
+   GALLERY ITEM (DESKTOP ANIMATION)
+   ============================================= */
+
 .gallery-item {
   break-inside: avoid;
   margin-bottom: 18px;
@@ -32,10 +42,10 @@
   cursor: pointer;
 
   opacity: 0;
+  transform: translateX(0);
   transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
-/* Start positions */
 .gallery-item.from-left {
   transform: translateX(-120px);
 }
@@ -44,13 +54,16 @@
   transform: translateX(120px);
 }
 
-/* Animate */
+/* Activate animation */
 .gallery-grid.loaded .gallery-item {
   opacity: 1;
   transform: translateX(0);
 }
 
-/* Image hover */
+/* =============================================
+   IMAGE HOVER
+   ============================================= */
+
 .gallery-item img {
   width: 100%;
   display: block;
@@ -61,7 +74,10 @@
   transform: scale(1.05);
 }
 
-/* Overlay */
+/* =============================================
+   OVERLAY
+   ============================================= */
+
 .gallery-overlay {
   position: absolute;
   inset: 0;
@@ -86,15 +102,53 @@
   margin-bottom: 6px;
 }
 
-/* Responsive */
+/* =============================================
+   RESPONSIVE GRID
+   ============================================= */
+
 @media (max-width: 1200px) {
-  .gallery-grid { columns: 3; }
+  .gallery-grid {
+    columns: 3;
+  }
 }
 
 @media (max-width: 768px) {
-  .gallery-grid { columns: 2; }
+  .gallery-grid {
+    columns: 2;
+  }
 }
 
 @media (max-width: 480px) {
-  .gallery-grid { columns: 1; }
+  .gallery-grid {
+    columns: 1;
+  }
+}
+
+/* =============================================
+   ❌ MOBILE VIEW — REMOVE ALL ANIMATIONS
+   ============================================= */
+
+@media (max-width: 768px) {
+
+  /* Remove animation */
+  .gallery-item,
+  .gallery-item.from-left,
+  .gallery-item.from-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Ensure clean layout (no shifting) */
+  .gallery-grid.loaded .gallery-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 420px) {
+  .gallery-item {
+    transition: none !important;
+  }
 }

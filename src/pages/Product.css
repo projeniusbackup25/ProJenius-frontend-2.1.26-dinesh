@@ -253,3 +253,185 @@
   50% { transform: translateY(-10px); }
 }
  
+/* ============================================
+   ⭐ FIXED MOBILE VIEW — NO OVERLAP
+   ============================================ */
+
+@media (max-width: 768px) {
+
+  /* Reduce hero height so content fits properly */
+  .video-hero {
+    min-height: auto;
+    padding: 6rem 1.2rem 4rem;
+    display: block;
+    text-align: center;
+  }
+
+  /* Title scaling */
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  /* Subtitle scaling */
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Description text */
+  .hero-desc {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 0 10px;
+  }
+
+  /* Badge */
+  .hero-badge {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Buttons stack vertically + centered */
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-product,
+  .btn-secondary {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  /* ⭐ Prevent product cards from overlapping hero */
+  .product-cards {
+    margin-top: 3rem !important;
+    padding-top: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .product-card {
+    padding: 1.5rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* ICON FIX */
+  .icon-box {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+
+  /* Coming Soon section spacing */
+  .coming-soon-section {
+    padding: 3.5rem 1rem;
+    margin-top: 2rem;
+  }
+
+  .coming-title {
+    font-size: 1.8rem;
+  }
+
+  .coming-desc {
+    font-size: 1rem;
+    padding: 0 12px;
+  }
+
+  .coming-image {
+    width: 260px;
+    animation: floatUp 3s ease-in-out infinite;
+  }
+
+  /* Background layers must not interfere on mobile */
+  .bg-video,
+  .video-overlay,
+  .particle-layer {
+    position: absolute !important;
+    height: 100%;
+  }
+}
+
+
+/* ============================================
+   ⭐ EXTRA SMALL PHONES (below 480px)
+   ============================================ */
+
+@media (max-width: 480px) {
+
+  .hero-title {
+    font-size: 1.7rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .coming-title {
+    font-size: 1.6rem;
+  }
+
+  .coming-image {
+    width: 220px;
+  }
+}
+
+
+/* ============================
+   FIX: REMOVE FOOTER GAP
+   ============================ */
+
+/* Remove unintended white space */
+.video-hero,
+.product-cards,
+.coming-soon-section {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Force wrapper to collapse correctly */
+.full-bg-wrapper {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Ensure no pseudo spacing from empty containers */
+.coming-soon-section {
+  margin-top: 0 !important;
+}
+
+/* Keep footer flush to last section */
+footer {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Mobile-specific gap fix */
+@media (max-width: 768px) {
+  .coming-soon-section {
+    margin: 0 !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .product-cards {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .video-hero {
+    padding-bottom: 2rem !important;
+  }
+}
