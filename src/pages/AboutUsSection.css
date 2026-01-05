@@ -5,13 +5,12 @@ html, body {
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
   box-sizing: border-box;
-  background: transparent;
 }
 
 .about-us-container {
   width: 100%; /* full viewport width */
   padding: 120px 40px 40px 40px; /* padding all around */
-  background-color: transparent;
+  background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
   align-items: stretch; /* stretch children full width */

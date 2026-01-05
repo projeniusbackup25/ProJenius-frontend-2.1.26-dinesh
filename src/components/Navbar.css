@@ -227,3 +227,17 @@
     padding: 10px 40px;
   }
 }
+
+
+/* REMOVE UNDERLINE ON LOGO & BRAND NAME HOVER */
+.navbar-logo,
+.navbar-logo:hover,
+.navbar-logo:focus,
+.navbar-logo:active {
+  text-decoration: none;
+}
+
+.navbar-logo span,
+.navbar-logo:hover span {
+  text-decoration: none;
+}
