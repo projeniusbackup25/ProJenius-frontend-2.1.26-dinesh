@@ -1,8 +1,47 @@
+/* ================= GLOBAL FIX ================= */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* ================= BACKGROUND VIDEO ================= */
+.fw-bg-video-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100svh; /* Mobile-safe viewport */
+  z-index: -3;
+  overflow: hidden;
+}
+
+.fw-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark overlay */
+.fw-bg-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: -2;
+}
+
 /* ================= ROOT SECTION ================= */
 .featured-workshop {
-  padding: 60px 8%;
-  color: #fff;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 120px 8% 60px; /* top padding prevents scroll jump */
   background: transparent;
+  color: #fff;
 }
 
 /* ================= LABEL ================= */
@@ -40,16 +79,14 @@
   max-width: 1200px;
   margin: 0 auto 70px;
   display: flex;
-  gap: 0;
   background: rgba(15, 15, 15, 0.85);
   border-radius: 22px;
   overflow: hidden;
   backdrop-filter: blur(8px);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
 
-  /* ENTRY ANIMATION */
   opacity: 0;
   animation: fw-center-slide 1s ease forwards;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 /* ================= ENTRY DIRECTION ================= */
@@ -69,7 +106,7 @@
   }
 }
 
-/* ================= PARTICLE GLOW (2ND IMAGE STYLE) ================= */
+/* ================= GLOW EFFECT ================= */
 .fw-card::after {
   content: "";
   position: absolute;
@@ -86,7 +123,6 @@
   z-index: -1;
 }
 
-/* ================= HOVER EFFECT ================= */
 .fw-card:hover::after {
   opacity: 1;
 }
@@ -102,11 +138,8 @@
 .fw-left,
 .fw-right {
   flex: 1;
-  position: relative;
-  z-index: 1;
 }
 
-/* ================= IMAGE ================= */
 .fw-img {
   width: 100%;
   height: 100%;
@@ -116,7 +149,6 @@
 /* ================= CONTENT ================= */
 .fw-right {
   padding: 42px;
-  text-align: left;
 }
 
 /* ================= TAGS ================= */
@@ -135,20 +167,18 @@
   font-size: 13px;
 }
 
-/* ================= HEADING ================= */
+/* ================= TEXT ================= */
 .fw-heading {
   font-size: 30px;
   margin-bottom: 14px;
 }
 
-/* ================= TEXT ================= */
 .fw-text {
   color: #cfd8dc;
   margin-bottom: 26px;
   line-height: 1.7;
 }
 
-/* ================= INFO ================= */
 .fw-info {
   display: flex;
   gap: 22px;
@@ -157,7 +187,7 @@
   flex-wrap: wrap;
 }
 
-/* ================= BUTTONS ================= */
+/* ================= BUTTON ================= */
 .fw-buttons {
   display: flex;
   gap: 16px;
@@ -171,24 +201,35 @@
   border: none;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .fw-btn-primary:hover {
-  transform: translateY(-4px);
   box-shadow: 0 0 20px rgba(0, 255, 242, 0.5);
 }
 
-/* ================= ALTERNATE LAYOUT ================= */
+/* ================= REVERSE ================= */
 .fw-card.reverse {
   flex-direction: row-reverse;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= MOBILE ================= */
 @media (max-width: 900px) {
+  .featured-workshop {
+    padding: 100px 6% 50px;
+  }
+
   .fw-card,
   .fw-card.reverse {
     flex-direction: column;
+    transform: translateY(40px);
+    animation: fw-mobile-fade 0.9s ease forwards;
+  }
+
+  @keyframes fw-mobile-fade {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   .fw-right {
@@ -196,6 +237,6 @@
   }
 
   .fw-title {
-    font-size: 38px;
+    font-size: 36px;
   }
 }

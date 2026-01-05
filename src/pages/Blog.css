@@ -1,37 +1,56 @@
 /* ===============================
    BLOG PAGE – BG VIDEO
    =============================== */
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: transparent;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
 
+/* ===============================
+   BLOG CONTAINER
+================================ */
 .blog-container {
   position: relative;
   min-height: 100vh;
-  overflow: hidden;
   color: #fff;
-  text-align: center;
-  font-family: system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
-/* ---------- Background Video ---------- */
+/* ===============================
+   BACKGROUND VIDEO
+================================ */
 .blog-bg-video {
   position: fixed;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -2;
+  z-index: -3;
+  pointer-events: none;
 }
 
-/* Dark overlay */
 .blog-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65);
-  z-index: -1;
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0.3),
+    rgba(0,0,0,0.9)
+  );
+  z-index: -2;
 }
 
-/* ---------- Page Content ---------- */
+/* ===============================
+   CONTENT WRAPPER
+================================ */
 .blog-content {
-  padding: 40px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px 60px;
+  text-align: center;
 }
 
 /* Title */

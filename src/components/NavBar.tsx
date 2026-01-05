@@ -62,13 +62,13 @@ const Navbar: React.FC = () => {
 
             <ul className={`dropdown-menu ${servicesOpen ? "show" : ""}`}>
               <li>
-                <Link to="/services/courses">Courses</Link>
+                <Link to="/courses">Courses</Link>
               </li>
               <li>
-                <Link to="/services/workshops">Workshops</Link>
+                <Link to="/workshops">Workshops</Link>
               </li>
               <li>
-                <Link to="/services/products">Products</Link>
+                <Link to="/products">Products</Link>
               </li>
             </ul>
           </li>
