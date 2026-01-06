@@ -269,39 +269,6 @@ body,
     width: 220px;
   }
 }
-/* ================= WHITE GAP FORCE FIX ================= */
 
-/* Kill any accidental white section */
-section {
-  background-color: transparent !important;
-}
 
-/* Fix mobile viewport height bugs */
-@media (max-width: 768px) {
 
-  body {
-    background-color: #000;
-  }
-
-  section {
-    min-height: auto !important;
-    height: auto !important;
-  }
-
-  /* Prevent phantom space caused by 100vh */
-  .video-hero,
-  .hero-section,
-  .landing-section {
-    min-height: auto !important;
-  }
-}
-/* ================= NAVBAR OFFSET FIX ================= */
-body {
-  padding-top: 80px; /* match navbar height */
-}
-
-@media (max-width: 768px) {
-  body {
-    padding-top: 70px;
-  }
-}

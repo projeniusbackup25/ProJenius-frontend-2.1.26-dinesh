@@ -1,4 +1,11 @@
 /* ================= GLOBAL RESET ================= */
+html, body {
+  background-color: #0f172a;
+  margin: 0;
+  padding: 0;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +28,8 @@ body, html {
   justify-content: center;
   text-align: center;
 }
+
+
 
 .hero-overlay {
   position: absolute;
@@ -172,7 +181,7 @@ body, html {
   padding: 4rem 2rem;
   background: #ffffff;
   text-align: center;
-  padding-bottom: 90px;
+  /* padding-bottom: 90px; */
 }
 
 .how-it-works h2 {
@@ -239,7 +248,7 @@ body, html {
 .cta {
   background: #0f172a;
   color: white;
-  padding: 4rem 2rem 90px;
+  padding: 4rem 2rem ;
   text-align: center;
 }
 
