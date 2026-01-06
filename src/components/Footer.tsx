@@ -92,7 +92,7 @@ const Footer = () => {
                 <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
               </div>
               <span className="rating-text">4.8 / 5</span>
-              <small>100+ Google Reviews</small>
+              <small>  100+ Google Reviews</small>
             </div>
           </a>
 

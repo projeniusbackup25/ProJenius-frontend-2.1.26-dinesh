@@ -600,14 +600,17 @@
   border-radius: 40px;
   cursor: pointer;
   /* background: linear-gradient(90deg, #00e8ff, #00ffd8); */
-  color: #000;
+  background-color:#3b82f6;
+  color:#000;
   transition: 0.25s ease-in-out;
   box-shadow: 0 0 20px rgba(0, 255, 242, 0.25);
+  
 }
 
 .enrol-btn:hover {
   transform: translateY(-4px);
   box-shadow: 0 0 35px rgba(0, 255, 242, 0.5);
+  text-decoration:none;
 }
 
 /* Responsive */
@@ -795,6 +798,7 @@
     width: 70% !important;
     padding: 14px 25px !important;
     font-size: 1rem !important;
+    color: #00d5ff;
   }
 
 

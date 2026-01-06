@@ -1,7 +1,18 @@
-/* ===== HERO SECTION ===== */
+/* ================= GLOBAL FIX ================= */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  overflow-x: hidden;
+  height: auto;
+}
+
+/* ================= HERO SECTION ================= */
 .video-hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 100svh; /* ✅ FIXED: mobile-safe viewport */
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -11,8 +22,7 @@
   padding: 4rem 1.5rem;
 }
 
-/* ===== BACKGROUND VIDEO ===== */
-/* ===== GLOBAL BACKGROUND VIDEO (affects ALL sections) ===== */
+/* ================= BACKGROUND VIDEO (GLOBAL) ================= */
 .bg-video {
   position: fixed;
   top: 0;
@@ -24,7 +34,6 @@
   pointer-events: none;
 }
 
-/* Dark overlay should also be global */
 .video-overlay {
   position: fixed;
   inset: 0;
@@ -32,7 +41,6 @@
   z-index: -2;
 }
 
-/* Particle layer global */
 .particle-layer {
   position: fixed;
   inset: 0;
@@ -42,13 +50,13 @@
   pointer-events: none;
 }
 
-/* ===== CENTER CONTENT ===== */
+/* ================= CENTER CONTENT ================= */
 .hero-center {
   max-width: 900px;
   z-index: 5;
 }
 
-/* ===== BADGE ===== */
+/* ================= BADGE ================= */
 .hero-badge {
   display: inline-block;
   padding: 0.5rem 1.2rem;
@@ -58,7 +66,7 @@
   margin-bottom: 2rem;
 }
 
-/* ===== TITLE ===== */
+/* ================= TITLE ================= */
 .hero-title {
   font-size: 3.6rem;
   font-weight: 800;
@@ -68,7 +76,7 @@
   color: #00fff2;
 }
 
-/* ===== SUBTEXT ===== */
+/* ================= SUBTEXT ================= */
 .hero-subtitle {
   font-size: 1.4rem;
   color: #aefdf8;
@@ -82,16 +90,15 @@
   line-height: 1.7;
 }
 
-/* ===== BUTTONS ===== */
+/* ================= BUTTONS ================= */
 .hero-buttons {
   width: 100%;
   display: flex;
-  justify-content: center;      /* Center horizontally */
-  align-items: center;          /* Center vertically */
+  justify-content: center;
+  align-items: center;
   margin-top: 3rem;
 }
 
-/* ⭐ FIX: Makes the button perfectly centered */
 .hero-buttons a {
   display: flex;
   justify-content: center;
@@ -99,7 +106,7 @@
 }
 
 .btn-product {
-  background: #00E0D3;
+  background: #00e0d3;
   color: #001414;
   padding: 0.9rem 2rem;
   border-radius: 14px;
@@ -108,12 +115,10 @@
   cursor: pointer;
   transition: 0.25s ease;
   margin-top: 30px;
-  /* margin: 0 auto; */
   display: block;
 }
 
 .btn-product:hover {
-  text-decoration: none;
   transform: translateY(-5px);
 }
 
@@ -125,11 +130,7 @@
   transition: 0.25s ease;
 }
 
-.btn-secondary:hover {
-  background: rgba(0, 255, 242, 0.15);
-}
-
-/* ===== PRODUCT CARDS ===== */
+/* ================= PRODUCT CARDS ================= */
 .product-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -138,6 +139,7 @@
   margin: 0 auto;
 }
 
+/* ================= CARD ================= */
 .product-card {
   background: rgba(255, 255, 255, 0.06);
   padding: 2rem;
@@ -152,7 +154,7 @@
   box-shadow: 0 0 40px rgba(0, 255, 242, 0.25);
 }
 
-/* ===== ICON ===== */
+/* ================= ICON ================= */
 .icon-box {
   width: 60px;
   height: 60px;
@@ -162,73 +164,23 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem;
-  color: #00E0D3;
+  color: #00e0d3;
   font-size: 1.6rem;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.7rem;
-  }
-  .hero-buttons {
-    flex-direction: column;
-  }
-}
-
-/* ===== COMING SOON SECTION ===== */
+/* ================= COMING SOON ================= */
 .coming-soon-section {
-  margin-top: 0;
   padding: 4rem 1.5rem;
   text-align: center;
-  background: transparent !important;
-  border: none;
-  backdrop-filter: none;
+  background: transparent;
   position: relative;
   z-index: 5;
-}
-
-/* Shared Background Wrappers */
-.full-bg-wrapper {
-  position: relative;
-  overflow: hidden;
-}
-
-.full-bg-wrapper .bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -3;
-}
-
-.full-bg-wrapper .video-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  z-index: -2;
-}
-
-.full-bg-wrapper .particle-layer {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
-  opacity: 0.25;
-  z-index: -1;
-}
-
-@keyframes glowSlide {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(100%); }
 }
 
 .coming-title {
   font-size: 2.5rem;
   font-weight: 700;
   color: #00fff2;
-  margin-bottom: 1rem;
 }
 
 .coming-desc {
@@ -241,10 +193,7 @@
 .coming-image {
   width: 380px;
   max-width: 100%;
-  margin: 0 auto;
   animation: floatUp 3s ease-in-out infinite;
-  z-index: 3;
-  position: relative;
   border-radius: 20px;
 }
 
@@ -252,57 +201,28 @@
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
- 
-/* ============================================
-   ⭐ FIXED MOBILE VIEW — NO OVERLAP
-   ============================================ */
 
+/* ================= MOBILE FIX (CRITICAL) ================= */
 @media (max-width: 768px) {
 
-  /* Reduce hero height so content fits properly */
   .video-hero {
     min-height: auto;
     padding: 6rem 1.2rem 4rem;
     display: block;
-    text-align: center;
   }
 
-  /* Title scaling */
   .hero-title {
     font-size: 2rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
   }
 
-  /* Subtitle scaling */
-  .hero-subtitle {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  /* Description text */
+  .hero-subtitle,
   .hero-desc {
     font-size: 1rem;
-    margin-bottom: 2rem;
-    padding: 0 10px;
   }
 
-  /* Badge */
-  .hero-badge {
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-  }
-
-  /* Buttons stack vertically + centered */
   .hero-buttons {
     flex-direction: column;
     gap: 12px;
-    width: 100%;
-  }
-
-  .hero-buttons a {
-    width: 100%;
-    justify-content: center;
   }
 
   .btn-product,
@@ -310,74 +230,35 @@
     width: 100%;
     max-width: 300px;
     margin: 0 auto;
-    padding: 0.8rem 1.2rem;
-    font-size: 1rem;
   }
 
-  /* ⭐ Prevent product cards from overlapping hero */
   .product-cards {
-    margin-top: 3rem !important;
-    padding-top: 2rem;
+    margin-top: 3rem;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    width: 100%;
-  }
-
-  .product-card {
-    padding: 1.5rem;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  /* ICON FIX */
-  .icon-box {
-    width: 50px;
-    height: 50px;
-    font-size: 1.3rem;
-  }
-
-  /* Coming Soon section spacing */
-  .coming-soon-section {
-    padding: 3.5rem 1rem;
-    margin-top: 2rem;
   }
 
   .coming-title {
     font-size: 1.8rem;
   }
 
-  .coming-desc {
-    font-size: 1rem;
-    padding: 0 12px;
-  }
-
   .coming-image {
     width: 260px;
-    animation: floatUp 3s ease-in-out infinite;
   }
 
-  /* Background layers must not interfere on mobile */
+  /* 🔥 FIX: stop background creating extra height */
   .bg-video,
   .video-overlay,
   .particle-layer {
     position: absolute !important;
     height: 100%;
+    min-height: 100%;
   }
 }
 
-
-/* ============================================
-   ⭐ EXTRA SMALL PHONES (below 480px)
-   ============================================ */
-
+/* ================= EXTRA SMALL DEVICES ================= */
 @media (max-width: 480px) {
-
   .hero-title {
     font-size: 1.7rem;
-  }
-
-  .hero-subtitle {
-    font-size: 0.95rem;
   }
 
   .coming-title {
@@ -388,50 +269,39 @@
     width: 220px;
   }
 }
+/* ================= WHITE GAP FORCE FIX ================= */
 
-
-/* ============================
-   FIX: REMOVE FOOTER GAP
-   ============================ */
-
-/* Remove unintended white space */
-.video-hero,
-.product-cards,
-.coming-soon-section {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+/* Kill any accidental white section */
+section {
+  background-color: transparent !important;
 }
 
-/* Force wrapper to collapse correctly */
-.full-bg-wrapper {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-/* Ensure no pseudo spacing from empty containers */
-.coming-soon-section {
-  margin-top: 0 !important;
-}
-
-/* Keep footer flush to last section */
-footer {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* Mobile-specific gap fix */
+/* Fix mobile viewport height bugs */
 @media (max-width: 768px) {
-  .coming-soon-section {
-    margin: 0 !important;
-    padding-bottom: 1rem !important;
+
+  body {
+    background-color: #000;
   }
 
-  .product-cards {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
+  section {
+    min-height: auto !important;
+    height: auto !important;
   }
 
-  .video-hero {
-    padding-bottom: 2rem !important;
+  /* Prevent phantom space caused by 100vh */
+  .video-hero,
+  .hero-section,
+  .landing-section {
+    min-height: auto !important;
+  }
+}
+/* ================= NAVBAR OFFSET FIX ================= */
+body {
+  padding-top: 80px; /* match navbar height */
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
   }
 }

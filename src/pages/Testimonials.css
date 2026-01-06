@@ -43,6 +43,10 @@
   100% { transform: translateX(-50%); }
 }
 
+/* 📱 Mobile view – slower loop */
+
+
+
 /* ============================
    TESTIMONIAL CARD
 ============================ */
@@ -115,7 +119,7 @@
   }
 
   .testimonial-loop-track {
-    animation-duration: 25s; /* faster for smaller screens */
+    animation-duration: 90s; /* faster for smaller screens */
   }
 
   .testimonial-card {

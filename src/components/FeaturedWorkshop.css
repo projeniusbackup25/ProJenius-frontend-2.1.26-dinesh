@@ -4,20 +4,14 @@ body,
 #root {
   margin: 0;
   padding: 0;
-  background: transparent;
   overflow-x: hidden;
-  overflow-y: auto;
 }
 
-/* ================= BACKGROUND VIDEO ================= */
+/* ================= BACKGROUND ================= */
 .fw-bg-video-wrapper {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100svh; /* Mobile-safe viewport */
+  inset: 0;
   z-index: -3;
-  overflow: hidden;
 }
 
 .fw-bg-video {
@@ -26,7 +20,6 @@ body,
   object-fit: cover;
 }
 
-/* Dark overlay */
 .fw-bg-overlay {
   position: fixed;
   inset: 0;
@@ -34,48 +27,42 @@ body,
   z-index: -2;
 }
 
-/* ================= ROOT SECTION ================= */
+/* ================= ROOT ================= */
 .featured-workshop {
   position: relative;
   z-index: 1;
   min-height: 100vh;
-  padding: 120px 8% 60px; /* top padding prevents scroll jump */
-  background: transparent;
+  padding: 120px 8% 60px;
   color: #fff;
 }
 
-/* ================= LABEL ================= */
+/* ================= TEXT ================= */
 .fw-label {
+  text-align: center;
   color: #00e0d3;
   font-size: 14px;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-  text-align: center;
 }
 
-/* ================= TITLE ================= */
 .fw-title {
-  font-size: 46px;
-  margin: 12px 0;
   text-align: center;
+  font-size: 46px;
 }
 
 .fw-title span {
   color: #00e0d3;
 }
 
-/* ================= SUBTITLE ================= */
 .fw-subtitle {
   max-width: 750px;
   margin: 0 auto 50px;
   color: #cfd8dc;
   text-align: center;
-  line-height: 1.6;
 }
 
 /* ================= CARD ================= */
 .fw-card {
-  position: relative;
+  --slide-from: -140px;
+
   max-width: 1200px;
   margin: 0 auto 70px;
   display: flex;
@@ -85,28 +72,35 @@ body,
   backdrop-filter: blur(8px);
 
   opacity: 0;
-  animation: fw-center-slide 1s ease forwards;
+  transform: translateX(var(--slide-from)) translateY(0);
+  animation: fw-slide-in 5s ease forwards;
+
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* ================= ENTRY DIRECTION ================= */
-.fw-card:nth-of-type(odd) {
-  transform: translateX(-140px);
+/* RIGHT SIDE ENTRY */
+.fw-card.reverse {
+  --slide-from: 140px;
+  flex-direction: row-reverse;
 }
 
-.fw-card:nth-of-type(even) {
-  transform: translateX(140px);
-}
-
-/* ================= ENTRY KEYFRAMES ================= */
-@keyframes fw-center-slide {
+/* ================= ENTRY ANIMATION ================= */
+@keyframes fw-slide-in {
   to {
-    transform: translateX(0);
+    transform: translateX(0) translateY(0);
     opacity: 1;
   }
 }
 
-/* ================= GLOW EFFECT ================= */
+/* ================= HOVER EFFECT (RESTORED) ================= */
+.fw-card:hover {
+  transform: translateX(0) translateY(-8px);
+  box-shadow:
+    0 0 25px rgba(0, 224, 211, 0.35),
+    0 0 60px rgba(0, 224, 211, 0.25);
+}
+
+/* ================= GLOW ================= */
 .fw-card::after {
   content: "";
   position: absolute;
@@ -114,12 +108,9 @@ body,
   border-radius: 26px;
   background:
     radial-gradient(circle at top left, rgba(0,224,211,0.45), transparent 40%),
-    radial-gradient(circle at bottom right, rgba(0,224,211,0.35), transparent 45%),
-    radial-gradient(circle, rgba(0,224,211,0.18) 1px, transparent 2px);
-  background-size: auto, auto, 6px 6px;
+    radial-gradient(circle at bottom right, rgba(0,224,211,0.35), transparent 45%);
   opacity: 0;
-  filter: blur(2px);
-  transition: opacity 0.45s ease;
+  transition: opacity 0.4s ease;
   z-index: -1;
 }
 
@@ -127,14 +118,7 @@ body,
   opacity: 1;
 }
 
-.fw-card:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    0 0 25px rgba(0,224,211,0.35),
-    0 0 60px rgba(0,224,211,0.25);
-}
-
-/* ================= LEFT / RIGHT ================= */
+/* ================= CONTENT ================= */
 .fw-left,
 .fw-right {
   flex: 1;
@@ -146,7 +130,6 @@ body,
   object-fit: cover;
 }
 
-/* ================= CONTENT ================= */
 .fw-right {
   padding: 42px;
 }
@@ -167,16 +150,13 @@ body,
   font-size: 13px;
 }
 
-/* ================= TEXT ================= */
 .fw-heading {
   font-size: 30px;
-  margin-bottom: 14px;
 }
 
 .fw-text {
   color: #cfd8dc;
   margin-bottom: 26px;
-  line-height: 1.7;
 }
 
 .fw-info {
@@ -185,12 +165,6 @@ body,
   color: #a9b3b8;
   margin-bottom: 32px;
   flex-wrap: wrap;
-}
-
-/* ================= BUTTON ================= */
-.fw-buttons {
-  display: flex;
-  gap: 16px;
 }
 
 .fw-btn-primary {
@@ -203,40 +177,27 @@ body,
   cursor: pointer;
 }
 
-.fw-btn-primary:hover {
-  box-shadow: 0 0 20px rgba(0, 255, 242, 0.5);
-}
-
-/* ================= REVERSE ================= */
-.fw-card.reverse {
-  flex-direction: row-reverse;
-}
-
 /* ================= MOBILE ================= */
 @media (max-width: 900px) {
-  .featured-workshop {
-    padding: 100px 6% 50px;
-  }
-
   .fw-card,
   .fw-card.reverse {
     flex-direction: column;
     transform: translateY(40px);
-    animation: fw-mobile-fade 0.9s ease forwards;
+    animation: fw-mobile-in 0.8s ease forwards;
   }
 
-  @keyframes fw-mobile-fade {
+  @keyframes fw-mobile-in {
     to {
       transform: translateY(0);
       opacity: 1;
     }
   }
 
-  .fw-right {
-    padding: 28px;
+  .fw-title {
+    font-size: 34px;
   }
 
-  .fw-title {
-    font-size: 36px;
+  .fw-right {
+    padding: 28px;
   }
 }

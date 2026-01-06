@@ -7,7 +7,7 @@ import careerImg from "../img/Worksho_page/career guidance.jpeg";
 import mentoringImg from "../img/Worksho_page/mentoring.jpeg";
 import awardImg from "../img/Worksho_page/award1.jpeg";
 
-import bgVideo from "../img/Background_videos&img/c2.webm"; // ✅ ADD YOUR VIDEO HERE
+import bgVideo from "../img/Background_videos&img/c2.webm";
 
 const FeaturedWorkshop: React.FC = () => {
   const navigate = useNavigate();
@@ -65,7 +65,7 @@ const FeaturedWorkshop: React.FC = () => {
 
               <div className="fw-info">
                 <span>📍 SRM University, Chennai</span>
-                <span>🕒 2-Day Workshop</span>
+                <span>🕒 1-Day Workshop</span>
               </div>
 
               <div className="fw-buttons">
