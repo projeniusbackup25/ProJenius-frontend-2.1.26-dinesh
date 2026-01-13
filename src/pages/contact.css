@@ -339,13 +339,13 @@ button:hover {
 
 /* Social Section */
 .social-section {
- background-color:#0b0f14
-;
+ background-color:#0b0f14;
   color:#e9eaeb;
   text-align: center;
   padding: 3rem;
   padding-bottom: 70px;
   padding-top: 70px;
+  margin-bottom: 20px;
 }
 
 .social-icons {
