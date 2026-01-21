@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/iot-web/:path*",
+      "destination": "https://projenius-iot-website.vercel.app/:path*"
+    }
+  ]
+}
