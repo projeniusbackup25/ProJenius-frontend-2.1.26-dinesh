@@ -266,6 +266,10 @@ export default function ContactPage() {
           </div>
         </section>
 
+<<<<<<< HEAD
+=======
+       
+>>>>>>> ec8c2fa (Update favicon and logo configuration)
       </div>
     </>
   );
