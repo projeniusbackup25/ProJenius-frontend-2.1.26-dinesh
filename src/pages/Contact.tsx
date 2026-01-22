@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import "./contact.css";
 import Footer from "../components/Footer.tsx";
 import Navbar from "../components/NavBar.tsx";
-import robotImg from "../img//Background_videos&img/robot.png";
+import robotImg from "../img/Background_videos&img/robot.png";
 import Spline from "@splinetool/react-spline";
 import circle3 from "../img/Background_videos&img/c2.webm";
 import emailjs from "@emailjs/browser";
@@ -107,14 +107,21 @@ export default function ContactPage() {
 
       <div className="contact-page">
         <section className="contact-hero-container">
-          <video className="contact-hero-video" autoPlay loop muted playsInline>
-            <source src={circle3} type="video/mp4" />
+          <video
+            className="contact-hero-video"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src={circle3} type="video/webm" />
           </video>
           <div className="hero-overlay"></div>
 
           <div className="contact-hero-content">
             <h1 className="contact-hero-title">
-              Get In Touch With <span style={{ color: "#00fff2" }}>ProJenius</span>
+              Get In Touch With{" "}
+              <span style={{ color: "#00fff2" }}>ProJenius</span>
             </h1>
             <p className="contact-hero-subtitle">
               Have a question, feedback, or need support? We're here to help you{" "}
@@ -128,10 +135,7 @@ export default function ContactPage() {
             <img src={robotImg} alt="Projenius Robot" />
             <div className="contact-info">
               <h2>Reach Out Directly</h2>
-              <a
-                href="mailto:teamprojenius@gmail.com"
-                className="emailg"
-              >
+              <a href="mailto:teamprojenius@gmail.com" className="emailg">
                 📧 teamprojenius@gmail.com
               </a>
               <a href="tel:+918925450473" className="phone">
@@ -266,10 +270,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-<<<<<<< HEAD
-=======
-       
->>>>>>> ec8c2fa (Update favicon and logo configuration)
+        
       </div>
     </>
   );

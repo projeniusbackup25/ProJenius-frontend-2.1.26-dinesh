@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./ExploreProducts.css";
-import bgVideo from "../img/Background_videos&img/c2.webm"; // <-- add your video here
+import bgVideo from "../img/Background_videos&img/c2.webm";
 
 export default function ExploreProductsPage() {
   return (
     <div className="explore-container">
-
       {/* Background Video */}
       <video
         className="explore-bg-video"
@@ -22,11 +21,12 @@ export default function ExploreProductsPage() {
 
       {/* Page Content */}
       <div className="explore-content">
-
         {/* Header */}
         <section className="explore-header">
           <p className="breadcrumb">Product Catalog</p>
-          <h1>Our <span>Products</span></h1>
+          <h1>
+            Our <span>Products</span>
+          </h1>
           <p className="subtitle">
             We're building products that empower learners and innovators.
             From digital courses to hands-on technology kits — discover tools
@@ -36,7 +36,7 @@ export default function ExploreProductsPage() {
 
         {/* Product Cards */}
         <section className="product-row">
-
+          {/* EduTech Platform */}
           <div className="product-card">
             <p className="tag">Coming Soon</p>
             <h2>ProJenius EduTech Platform</h2>
@@ -58,6 +58,7 @@ export default function ExploreProductsPage() {
             </button>
           </div>
 
+          {/* IoT Kit */}
           <div className="product-card">
             <p className="tag">Coming Soon</p>
             <h2>ProJenius IoT Kit</h2>
@@ -74,11 +75,17 @@ export default function ExploreProductsPage() {
               <li>✔ QR-linked guides</li>
             </ul>
 
-            <button className="btn-secondary">
-              Pre-order Interest
-            </button>
+            {/* 🔗 Redirect to IoT Website */}
+            <a
+              href="https://iot.projenius.in"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="btn-secondary">
+                Pre-order Interest
+              </button>
+            </a>
           </div>
-
         </section>
 
         {/* Development */}
@@ -89,7 +96,9 @@ export default function ExploreProductsPage() {
 
         {/* FAQ */}
         <section className="faq">
-          <h2>Frequently Asked <span>Questions</span></h2>
+          <h2>
+            Frequently Asked <span>Questions</span>
+          </h2>
 
           <details>
             <summary>When will the products launch?</summary>
@@ -109,14 +118,15 @@ export default function ExploreProductsPage() {
 
         {/* CTA */}
         <section className="cta">
-          <h2>Ready to Start Your <span>Learning Journey?</span></h2>
+          <h2>
+            Ready to Start Your <span>Learning Journey?</span>
+          </h2>
           <p>Reach out to us for guidance, inquiries, or collaborations.</p>
 
           <Link to="/contact">
             <button className="btn-primary">Go to Contact Page</button>
           </Link>
         </section>
-
       </div>
     </div>
   );
