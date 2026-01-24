@@ -198,6 +198,7 @@
 /* ---------------- SECTION 2 ---------------- */
 .interactive-section {
   width: 100%;
+  height: 650px;
   padding: 0px 10%;      /* reduced vertical padding */
   margin: 0;              /* remove negative margin */
   display: flex;
@@ -232,10 +233,11 @@
 
 
 .interactive-right img {
-    height: auto !important; /* or whatever height you need */
-    width: 550px;      /* FIXED width so it stays aligned */
+    height:auto ; /* or whatever height you need */
+    width: 750px;      /* FIXED width so it stays aligned */
     object-fit: cover; /* keeps proportions & cropping clean */
     border-radius: 20px;
+    margin-top: 400px;
 }
 
 
