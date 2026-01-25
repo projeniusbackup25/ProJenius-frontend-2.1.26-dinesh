@@ -22,8 +22,8 @@ const posts = [
   { id: 5, category: "IoT", title: "Building an Ultrasonic Blind Stick", desc: "Step-by-step guide to building an assistive IoT device."},
   { id: 6, category: "Success Stories", title: "From Zero to Web Developer", desc: "How a workshop student became a professional web developer."},
 
-  { id: 7, category: "Reviews", title: "Review Section", desc: "Watch feedback videos from events, workshops & clients", date: "Jan 2, 2025", read: "Video collection", type: "review" },
-  { id: 8, category: "Awards", title: "Awards & Appreciation", desc: "View certificates, awards, recognition & moments", date: "Jan 5, 2025", read: "Image gallery", type: "award" }
+  { id: 7, category: "Reviews", title: "Review Section", desc: "Watch feedback videos from events, workshops & clients"},
+  { id: 8, category: "Awards", title: "Awards & Appreciation", desc: "View certificates, awards, recognition & moments" }
 ];
 
 const reviewVideos = [

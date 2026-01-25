@@ -198,7 +198,7 @@
 /* ---------------- SECTION 2 ---------------- */
 .interactive-section {
   width: 100%;
-  height: 650px;
+  min-height: 650px;
   padding: 0px 10%;      /* reduced vertical padding */
   margin: 0;              /* remove negative margin */
   display: flex;
@@ -225,7 +225,7 @@
 
 /* Robot image fix */
 .robot-img {
-  width: 600px;       /* slightly bigger like screenshot */
+  width: min(520px, 45vw); /* responsive for tablet */
   height: auto;
   border-radius: 20px;
   transform: scaleX(-1);
@@ -237,7 +237,7 @@
     width: 750px;      /* FIXED width so it stays aligned */
     object-fit: cover; /* keeps proportions & cropping clean */
     border-radius: 20px;
-    margin-top: 400px;
+    /* margin-top: 40px; */
 }
 
 
@@ -370,6 +370,17 @@
   pointer-events: none;
 }
 
+
+@media (max-width: 1100px) {
+  .robot-wrap::before {
+    width: 95%;
+    height: 70%;
+  }
+}
+
+
+
+
 .robot-img {
   width: 520px;
   height: 520px;
@@ -399,6 +410,18 @@
   border: 1px solid #222;
 }
 
+
+@media (max-width: 1100px) {
+  .active-learners-card {
+    bottom: 10px;
+    left: 10px;
+    transform: scale(0.9);
+  }
+}
+
+
+
+
 .active-learners-card img {
   width: 35px;
 }
@@ -415,27 +438,52 @@
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+
+@media (max-width: 600px) {
+
   .interactive-section {
-    flex-direction: column;
+    height: auto !important;
+    padding: 40px 20px !important;
+    flex-direction: column !important;
+    gap: 30px !important;
     text-align: center;
   }
 
-  .interactive-left,
-  .interactive-right {
-    width: 100%;
+  .interactive-left {
+    width: 100% !important;
   }
 
-  .features-grid {
-    grid-template-columns: 1fr;
-    justify-items: center;
+  .interactive-right {
+    width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .robot-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .robot-img {
-    width: 75%;
-    margin-top: 30px;
+    width: 85% !important;
+    max-width: 320px;
+    height: auto !important;
+    margin: 0 auto !important;
+    transform: none !important; /* prevents weird flip issues */
+  }
+
+  .robot-wrap::before {
+    width: 120% !important;
+    height: 90% !important;
+  }
+
+  /* hide desktop floating badge */
+  .active-learners-card {
+    display: none !important;
   }
 }
+
 
 .why-section {
   width: 100%;
@@ -808,4 +856,27 @@
   h1, h2, h3, p, span {
     word-wrap: break-word;
   }
+}
+
+
+/* ==========================
+   TABLET FIX (601px–1100px)
+   ========================== */
+@media (max-width: 1100px) and (min-width: 601px) {
+
+  .interactive-section {
+    height: auto;
+    padding: 80px 6%;
+    align-items: flex-start;
+  }
+
+  .interactive-left {
+    width: 52%;
+  }
+
+  .interactive-right {
+    width: 48%;
+    justify-content: center;
+  }
+
 }
