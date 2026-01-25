@@ -349,3 +349,17 @@
   margin-top: 20px;
   font-size: 16px;
 }
+
+
+.blog-card p::before,
+.blog-card p::after,
+.blog-card::before,
+.blog-card::after {
+  content: none !important;
+}
+
+/* .meta {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #aaa;
+} */
