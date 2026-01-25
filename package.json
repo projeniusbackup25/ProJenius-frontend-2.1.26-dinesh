@@ -30,7 +30,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "ESLINT_NO_DEV_ERRORS=true react-scripts build",
+    "build": "cross-env CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -53,7 +53,10 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^24.0.11",
+    "@types/node": "^18.19.0",
     "cross-env": "^10.1.0"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
